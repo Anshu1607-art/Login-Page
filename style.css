@@ -1,1 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Green grid effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Black background */
+    background-size: 50px 50px;
+    background-image: 
+        linear-gradient(to right, #00ff00 1px, transparent 1px),
+        linear-gradient(to bottom, #00ff00 1px, transparent 1px);
+    z-index: -2; /* Push grid behind all elements */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Subtle dark overlay */
+    z-index: -1; /* Push overlay behind the content but above the grid */
+}
+
+/* Styling the login container */
+.content {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    text-align: center;
+    width: 300px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #00ff00;
+}
+
+/* Input box styles */
+.inputBox {
+    position: relative;
+    margin: 20px 0;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+}
+
+.inputBox input:focus {
+    border-color: #00ff00;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.inputBox input:focus + span,
+.inputBox input:valid + span {
+    top: -5px;
+    color: #00ff00;
+    font-size: 0.8em;
+}
+
+/* Link styling */
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.links a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Submit button styling */
+.inputBox input[type="submit"] {
+    background: #00ff00;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+    background: #00cc00;
+}
 
